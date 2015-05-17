@@ -1,0 +1,41 @@
+#navbar-primary {
+  text-align: right;
+  padding: 10px 0px 10px;
+  border-right: 1px solid rgba(0, 136, 204, 0.75);
+
+  ul {
+    padding: 0px;
+  }
+  li > a {
+    padding: 3px 15px 3px 0px;
+  }
+}
+
+#navbar-secondary {
+  ul {
+    padding:0px;
+  }
+  li {
+    float: left;
+    margin-right: 7px;
+    a {
+      padding: 0px 7px;
+    }
+  }
+}
+
+#navbar-primary, #navbar-secondary {
+  li {
+    list-style: none;
+    a {
+      display: block;
+    }
+  }
+  li > a:hover, li > a:focus {
+    background-color: transparent;
+  }
+  .active {
+    background-color: #428bca;
+    color: white;
+  }
+}

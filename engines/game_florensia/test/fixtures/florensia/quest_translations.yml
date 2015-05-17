@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  language_id: 
+  title: MyString
+  mission_1_title: MyString
+
+two:
+  language_id: 
+  title: MyString
+  mission_1_title: MyString

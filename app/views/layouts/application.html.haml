@@ -1,0 +1,47 @@
+!!! XML
+!!!
+%html
+  %head
+    %title Gaming-Base
+    = stylesheet_link_tag    "application", "data-turbolinks-track" => true, media: "all"
+    = engine_stylesheets
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = engine_javascripts
+    = csrf_meta_tags
+    =# favicon_link_tag
+  %body
+
+    .navbar.navbar-default.navbar-fixed-top.header{role: 'navigation'}
+      #header
+        .container
+          #login.pull-right
+            - if user_signed_in?
+              = t ".signed_in_html", :name => link_to(current_user, main_app.edit_user_registration_path)
+              \-
+              = link_to t(".sign_out"), main_app.destroy_user_session_path, :method => :delete
+            - else
+              = link_to t(".sign_up"), main_app.new_user_registration_path
+              \-
+              = link_to t(".sign_in"), main_app.new_user_session_path
+
+          .navbar-header
+            = link_to "Gaming-Base", main_app.root_path, class: "navbar-brand"
+            = render_navigation &games_navigation
+
+    
+    .container
+      .col-md-2.nav#navbar-primary= render_navigation level: 1, &navigation
+      .col-md-10
+        .row
+          #navbar-secondary= render_navigation level: 2, &navigation
+          = bootstrap_flash
+          .col-md-12#content= yield
+
+    #footer
+      .container
+        %p.text-muted
+          &copy; #{Time.now.year} gaming-base.net
+          %span#revision
+            - cache("page_revision") do
+              - if rev = current_revision
+                \/ rev #{rev}

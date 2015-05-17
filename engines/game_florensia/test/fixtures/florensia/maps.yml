@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  area_code: MyString
+  img_code: MyString
+  map_id: 
+  ltwh: MyString
+
+two:
+  area_code: MyString
+  img_code: MyString
+  map_id: 
+  ltwh: MyString
